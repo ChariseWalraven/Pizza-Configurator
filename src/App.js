@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Reservation from './components/ReservationExample'
+import BaseForm from './components/BasesForm'
+import Total from './components/Total'
 import logo from './logo.png';
 import './App.css';
 
@@ -11,7 +12,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Build your own pizza!</h1>
         </header>
-        <Reservation />
+        <Total />
+        <BaseForm />
       </div>
     );
   }

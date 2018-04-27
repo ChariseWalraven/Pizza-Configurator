@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 
-class Form extends PureComponent {
+class ToppingsForm extends PureComponent {
   render() {
     return(
       <form>
@@ -11,3 +11,5 @@ class Form extends PureComponent {
     )
   }
 }
+
+export default ToppingsForm;
