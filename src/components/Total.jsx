@@ -5,12 +5,14 @@ export default class Total extends PureComponent {
     e.preventDefault()
   }
   render() {
+    const totalPrice = this.props.total
     return(
       <div>
         <div className='total-price'>
-          &euro;{}
+        <span>
+          &euro;{totalPrice}
+        </span>
           {/* Link to a new page with a tick? toggle hidden class or something when clicked? */}
-          <button id='order-button' onClick={(e) => this.handleSubmit(e)}><span>Okay</span></button>
         </div>
       </div>
     )

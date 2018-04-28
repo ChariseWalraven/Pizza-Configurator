@@ -5,9 +5,9 @@ import base from './base'
 import toppings from './toppings'
 
 export default {
+  base,
   reference,
-  totalPrice,
   sauce,
   toppings,
-  base
+  totalPrice,
 }

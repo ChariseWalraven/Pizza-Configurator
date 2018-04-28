@@ -18,30 +18,34 @@ export default class Form extends PureComponent {
     // check and uncheck button -- need to add baseSelected to state. Time for redux!!! :)
     // calculation goodness goes here...
   }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    //show total
+  }
   render() {
     //import pizza types from store, whatever here
     return(
       <section>
-        <form name='bases' className="base--form">
+        <form name='bases' id="bases-form">
           <hr />
-          <label>Pick A Base</label>
+          <label className='bases-main-label'>Pick A Base</label>
           <br />
           <span className="ny-style"><i>NY Style </i></span>
           <OptionForm options={bases} onClick={e => this.handleBase(e)}/>
+        </form>
+        <form name='sauces' id='sauces-form'>
           <hr />
-          <label>Pick A Sauce </label>
+          <label className='sauces-main-label'>Pick A Sauce </label>
           <OptionForm options={sauces}/>
-          <hr />
-          <label>Pick Some Toppings<span className='max-3'><i> Max 3</i></span></label>
-          <hr />
         </form>
         <CheckboxForm options={toppings}/>
         <hr />
-        <form>
-        <label htmlFor='turboDrone'>
-          <input name='turboDrone' type='checkbox'/>
+        <form name='turbo-drone' id="turbo-drone-form">
+          <label className='turbo-drone-main-label' htmlFor='turbo-drone'>
+          <input name='turbo-drone' type='checkbox'/>
           Turbo Drone<i> new!</i>
-        </label>
+          </label>
+          <input id='order-button' type='button' onClick={(e) => this.handleSubmit(e)} value='Okay'></input>
         </form>
       </section>
     )

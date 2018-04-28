@@ -13,10 +13,10 @@ class CheckboxForm extends PureComponent {
 
   handleClick = (e) => {
     //when a user clicks on more than 3 checkboxes, an alert comes up saying the limit for toppings is 3
-    if(this.props.reference.clicked <= 4) {
+    if(this.props.toppings.clicked <= 4) {
       this.props.updateClicked(e)
     }
-    if(this.props.reference.clicked >= 4) {
+    if(this.props.toppings.clicked >= 4) {
       alert("OI!")
       e.preventDefault();
       // reset click counter
@@ -30,7 +30,8 @@ class CheckboxForm extends PureComponent {
     // console.log(this.props)
     const data = this.props.reference.toppings
     return (
-      <form id='toppings-form'>
+      <form name='toppings' className='toppings-form'>
+        <label className='toppings-main-label'>Pick Some Toppings<span className='max-3'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max 3</span></label>
         {data.map((e, i) => {
           const name = e
           return(
@@ -39,11 +40,11 @@ class CheckboxForm extends PureComponent {
               <label key={`label--${e}--${i}`}>{name}</label>
             </div>
           )})}
-        <div>
+        {/* <div> */}
           {/* If this gets clicked, uncheck all the other checkboxes */}
-          <input type='checkbox' id='no-toppings' />  
-          <label>None</label>
-        </div>
+          {/* <input type='checkbox' id='no-toppings' />   */}
+          {/* <label>None</label> */}
+        {/* </div> */}
       </form>
       )
     }
@@ -51,7 +52,8 @@ class CheckboxForm extends PureComponent {
 
   const mapStateToProps = (state) => {
     return {
-      reference: state.reference
+      reference: state.reference,
+      toppings: state.toppings
     }
   }
 

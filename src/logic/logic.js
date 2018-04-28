@@ -9,26 +9,28 @@ if(typeof id === 'string') {
 else return Object.values(data[id])[0]
 }
 
-//implement your form and see what you get back before you work this one out!
+Pizza.calculateTurboDrone = (basePrice, saucePrice, toppingsPrice = 0) => {
+  const x = ((basePrice + saucePrice + toppingsPrice) / 10)
+  return Math.round(100 * x) / 100
+}
 
-// Pizza.calculateToppings = function(...args) {
-//   let result = 1
-//   const argValues = Object.values(arguments)
-//   // console.log(typeof argValues[0])
-//   if(typeof argValues[0] === 'string') {
-//     const validToppings = argValues.filter(val => toppings.includes(val)) // returns an array of toppings
-//     if(validToppings.length < 4) result = 0.5 * validToppings.length
-//   }
-//   if(typeof argValues[0] === 'number') {
-//     // check if arg values are valid
-//     console.log(argValues.reduce((acc, val) => {
-        
-//     }, []).length)
-//   }
-//   return result
-//   }
+Pizza.calculateTotal = (basePrice = 6.45, saucePrice = 0.50, toppingsPrice = 0, turboDrone = false) => {
+  let result = basePrice + saucePrice + toppingsPrice
+  console.log(result)
+  if(turboDrone === true) {
+    let turbo = Pizza.calculateTurboDrone(basePrice, saucePrice, toppingsPrice)
+    console.log(turbo)
+    result = result + turbo
+  }
+  return Math.round(100 * result) / 100
+}
 
-// console.log(Pizza.calculateToppings(0, 2, 2))
+
+Pizza.calculateToppings = (numToppings = 0) => {
+  let result = 0
+  numToppings < 4 ? result = numToppings * 0.5 : result = false
+  return result;
+}
 
 Pizza.getBaseOrSauceName = (baseOrSauce) => {
   // grab name from base/sauce and return it

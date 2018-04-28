@@ -1,11 +1,17 @@
-// import { toppingClicked } from '../actions/toppings'
-import { UPDATE_CLICKED } from '../actions/types'
+import { UPDATE_CLICKED, RESET_CLICKED } from '../actions/types'
 
-export default function(state = [], {type, payload} = {}) {
+const initialState = {
+  toppingNames: [],
+  clicked: 0
+}
+
+export default function(state = initialState, {type, payload} = {}) {
   switch(type) {
+    case UPDATE_CLICKED:
+      return payload
 
-    case UPDATE_CLICKED: 
-    return payload
+    case RESET_CLICKED:
+      return payload
 
     default:
     return state
