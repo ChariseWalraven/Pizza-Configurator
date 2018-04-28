@@ -1,0 +1,2 @@
+export const UPDATE_CLICKED = 'UPDATE_CLICKED'
+export const RESET_CLICKED = 'RESET_CLICKED,'
