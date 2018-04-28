@@ -1,50 +1,51 @@
-const { calculateBase, calculateToppings, calculateSauce} = require('./logic')
+const { calculateBaseOrSauce, calculateToppings} = require('./logic')
+import {bases, sauces} from '../constants'
 
-describe('calculateBase', () => {
+describe('calculateBaseOrSauce', () => {
   test('exists', () => {
-    expect(calculateBase('25 cm')).toBeDefined()
+    expect(calculateBaseOrSauce('25 cm', bases)).toBeDefined()
   })
   test('returns something', () => {
-    expect(calculateBase('20 cm')).toBeTruthy()
+    expect(calculateBaseOrSauce('20 cm', bases)).toBeTruthy()
   })
   test('returns a number', () => {
-    expect(typeof calculateBase('25 cm')).toBe('number')
+    expect(typeof calculateBaseOrSauce('25 cm', bases)).toBe('number')
   })
   test('returns the correct number when given a string with the cm value', () => {
-    expect(calculateBase('20 cm')).toBe(6.45)
-    expect(calculateBase('25 cm')).toBe(8.99)
-    expect(calculateBase('30 cm')).toBe(11.49)
-    expect(calculateBase('35 cm')).toBe(13.49)
+    expect(calculateBaseOrSauce('20 cm', bases)).toBe(6.45)
+    expect(calculateBaseOrSauce('25 cm', bases)).toBe(8.99)
+    expect(calculateBaseOrSauce('30 cm', bases)).toBe(11.49)
+    expect(calculateBaseOrSauce('35 cm', bases)).toBe(13.49)
   })
   test('returns the correct number when given an index', () => {
-    expect(calculateBase(0)).toBe(6.45)
-    expect(calculateBase(1)).toBe(8.99)
-    expect(calculateBase(2)).toBe(11.49)
-    expect(calculateBase(3)).toBe(13.49)
+    expect(calculateBaseOrSauce(0, bases)).toBe(6.45)
+    expect(calculateBaseOrSauce(1, bases)).toBe(8.99)
+    expect(calculateBaseOrSauce(2, bases)).toBe(11.49)
+    expect(calculateBaseOrSauce(3, bases)).toBe(13.49)
   })
 })
 
-describe('calculateSauce', () => {
+describe('calculateBaseOrSauce', () => {
   test('exists', () => {
-    expect(calculateSauce('white sauce')).toBeDefined()
+    expect(calculateBaseOrSauce('white sauce', sauces)).toBeDefined()
   })
   test('returns something', () => {
-    expect(calculateSauce('white sauce')).toBeTruthy()
+    expect(calculateBaseOrSauce('white sauce', sauces)).toBeTruthy()
   })
   test('returns a number', () => {
-    expect(typeof calculateSauce('white sauce')).toBe('number')
+    expect(typeof calculateBaseOrSauce('white sauce', sauces)).toBe('number')
   })
   test('returns the correct number when called with the name of the sauce', () => {
-      expect(calculateSauce('white sauce')).toBe(0.50)
-      expect(calculateSauce('red sauce')).toBe(0.50)
-      expect(calculateSauce('double red sauce')).toBe(1.00)
-      expect(calculateSauce('mix it up')).toBe(1.50)
+      expect(calculateBaseOrSauce('white sauce', sauces)).toBe(0.50)
+      expect(calculateBaseOrSauce('red sauce', sauces)).toBe(0.50)
+      expect(calculateBaseOrSauce('double red sauce', sauces)).toBe(1.00)
+      expect(calculateBaseOrSauce('mix it up', sauces)).toBe(1.50)
   })
    test('when called with the index of the sauce', () => {
-      expect(calculateSauce(0)).toBe(0.50)
-      expect(calculateSauce(1)).toBe(0.50)
-      expect(calculateSauce(2)).toBe(1.00)
-      expect(calculateSauce(3)).toBe(1.50)
+      expect(calculateBaseOrSauce(0, sauces)).toBe(0.50)
+      expect(calculateBaseOrSauce(1, sauces)).toBe(0.50)
+      expect(calculateBaseOrSauce(2, sauces)).toBe(1.00)
+      expect(calculateBaseOrSauce(3, sauces)).toBe(1.50)
     })
 })
 

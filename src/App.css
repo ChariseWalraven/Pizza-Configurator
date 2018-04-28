@@ -1,12 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-
-  height: 150px;
-}
-
 .App-header {
   background-color: lightslategray;
   height: 150px;
@@ -14,10 +5,72 @@
   color: white;
 }
 
+.left-section {
+  width: 60%;
+  position: relative;
+  min-height: 1px;
+  padding: 0 15px;
+}
+
+.left-section h1 {
+  display: inline;
+  z-index: 1;
+}
+
+.App-logo {
+  height: 120px;
+}
+
 .App-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  text-align: center
 }
 
 .App-intro {
   font-size: large;
+}
+
+.total {
+  left: 50%;
+  top: 115px;
+  margin: 0 auto;
+}
+
+.total img, .total button{
+  /* display: block; */
+  max-height: 30%;
+}
+
+#order-button {
+  margin: 20px;
+  background-color: lightgreen;
+  padding: 1em 20px;
+  line-height: 0%;
+  z-index: -1;
+}
+
+.total-price {
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+  line-height: 300%;
+  margin: 0 auto;
+  border-radius: 50px;
+  text-align: center;
+  display: inline-flex;
+  box-shadow: 2px 4px 5px grey;
+}
+
+/* .total, .App, .left-section {
+  border: 1px solid grey;
+} */
+
+button {
+  border-radius: 0px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none
 }

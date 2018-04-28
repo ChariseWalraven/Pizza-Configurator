@@ -6,12 +6,13 @@ describe('Bases', () => {
   })
   test('which each have a size and price', () => {
     expect(bases).toEqual(
-        expect.objectContaining([{
-        size: 20 || 25 || 30||35,
-        price: 6.45 || 8.99 || 11.49 || 13.49
-        }])
+        expect.arrayContaining([
+        {'20 cm': 6.45},
+        {'25 cm': 8.99},
+        {'30 cm': 11.49}, 
+        {'35 cm': 13.49}
+        ])
       )
-
   })
 })
 
@@ -22,18 +23,10 @@ describe('Sauces', () => {
   test('with a name and a number(price)', () => {
     expect(sauces).toEqual(
       expect.objectContaining([
-        {
-          "white sauce": 0.50
-        },
-        {
-          "red sauce": 0.50
-        },
-        {
-          "double red sauce": 1.00
-        },
-        {
-          "mix it up": 1.50
-        }
+        {"white sauce": 0.50},
+        {"red sauce": 0.50},
+        {"double red sauce": 1.00},
+        {"mix it up": 1.50}
       ])
     )
   })
