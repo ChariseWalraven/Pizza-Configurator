@@ -5,20 +5,8 @@
   color: white;
 }
 
-.left-section {
-  width: 60%;
-  position: relative;
-  min-height: 1px;
-  padding: 0 15px;
-}
-
-.left-section h1 {
-  display: inline;
-  z-index: 1;
-}
-
 .App-logo {
-  height: 120px;
+  height: 350px;
 }
 
 .App-title {
@@ -36,11 +24,6 @@
   margin: 0 auto;
 }
 
-.total img, .total button{
-  /* display: block; */
-  max-height: 30%;
-}
-
 #order-button {
   margin: 20px;
   background-color: lightgreen;
@@ -56,7 +39,7 @@
 .total-price {
   width: 60px;
   height: 60px;
-  background-color: yellow;
+  background-color: #4d4d;
   margin: 0 auto;
   border-radius: 50px;
   display: block;
@@ -67,23 +50,6 @@
   line-height: 450%;
   margin-left: 9px;
 }
-
-.toppings-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.max-3 {
-  align-self: flex-end;
-  font-weight: normal;
-  font-size: 12px;
-}
-/* .total, .App, .left-section {
-  border: 1px solid grey;
-} */
  
 .toppings-main-label, .bases-main-label, .turbo-drone-main-label, .sauces-main-label {
   font-weight: bold

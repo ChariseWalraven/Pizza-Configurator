@@ -1,18 +1,33 @@
 import React, {PureComponent} from 'react'
 
 export default class Total extends PureComponent {
-  handleSubmit = (e) => {
-    e.preventDefault()
+  constructor(props){
+    super(props)
+    // grab state from redux store
+    this.state = {total: this.props.total}
+  }
+
+  componentDidMount(){
+    this.intervalId = setInterval(()=>this.updatePrice(), 500)
+  }
+  
+  componentWillUnmount() {
+    clearInterval(this.intervalId)
+  }
+  updatePrice = () => {
+    // get state from redux
+    const state = this.props.store.getState()
+    this.setState({
+      total: state.totalPrice
+    })
   }
   render() {
-    const totalPrice = this.props.total
     return(
       <div>
         <div className='total-price'>
         <span>
-          &euro;{totalPrice}
+          &euro;{this.state.total}
         </span>
-          {/* Link to a new page with a tick? toggle hidden class or something when clicked? */}
         </div>
       </div>
     )

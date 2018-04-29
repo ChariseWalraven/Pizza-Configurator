@@ -9,17 +9,17 @@ if(typeof id === 'string') {
 else return Object.values(data[id])[0]
 }
 
+// Pizza.calculateBaseOrSauce('20 cm')
+
 Pizza.calculateTurboDrone = (basePrice, saucePrice, toppingsPrice = 0) => {
   const x = ((basePrice + saucePrice + toppingsPrice) / 10)
   return Math.round(100 * x) / 100
 }
 
-Pizza.calculateTotal = (basePrice = 6.45, saucePrice = 0.50, toppingsPrice = 0, turboDrone = false) => {
+Pizza.calculatePizzaTotal = (basePrice = 6.45, saucePrice = 0.50, toppingsPrice = 0, turboDrone = false) => {
   let result = basePrice + saucePrice + toppingsPrice
-  console.log(result)
   if(turboDrone === true) {
     let turbo = Pizza.calculateTurboDrone(basePrice, saucePrice, toppingsPrice)
-    console.log(turbo)
     result = result + turbo
   }
   return Math.round(100 * result) / 100

@@ -1,4 +1,4 @@
-const { calculateBaseOrSauce, calculateToppings, calculateTurboDrone, calculateTotal} = require('./logic')
+const { calculateBaseOrSauce, calculateToppings, calculateTurboDrone, calculatePizzaTotal} = require('./logic')
 import {bases, sauces} from '../constants'
 
 describe('calculateBaseOrSauce', () => {
@@ -93,38 +93,38 @@ describe('calculateTurboDrone', () => {
   })
 })
 
-describe('calculateTotal', () => {
+describe('calculatePizzaTotal', () => {
   test('exists', () => {
-    expect(calculateTotal()).toBeDefined()
+    expect(calculatePizzaTotal()).toBeDefined()
   })
   test('returns something', () => {
-    expect(calculateTotal()).toBe(6.95)
+    expect(calculatePizzaTotal()).toBe(6.95)
   })
   test('returns a number', () => {
-    expect(typeof calculateTotal()).toBe('number')
+    expect(typeof calculatePizzaTotal()).toBe('number')
   })
   test('returns the correct number with no toppings and no turbo drone', () => {
-    expect(calculateTotal(6.45, 1.00)).toBeCloseTo(7.45, 2)
+    expect(calculatePizzaTotal(6.45, 1.00)).toBeCloseTo(7.45, 2)
   })
   test('with one topping', () => {
-    expect(calculateTotal(6.45, 1.00, 0.50)).toBeCloseTo(7.95, 2)
+    expect(calculatePizzaTotal(6.45, 1.00, 0.50)).toBeCloseTo(7.95, 2)
   })
   test('with two toppings', () => {
-    expect(calculateTotal(6.45, 1.00, 1.00)).toBeCloseTo(8.45, 2)
+    expect(calculatePizzaTotal(6.45, 1.00, 1.00)).toBeCloseTo(8.45, 2)
   })
   test('with three toppings', () => {
-    expect(calculateTotal(6.45, 1.00, 1.50)).toBeCloseTo(8.95, 2)
+    expect(calculatePizzaTotal(6.45, 1.00, 1.50)).toBeCloseTo(8.95, 2)
   })
   test('returns the correct number with no toppings and turbo drone selected', () => {
-    expect(calculateTotal(6.45, 1.00, true)).toBeCloseTo(8.45, 2)
+    expect(calculatePizzaTotal(6.45, 1.00, true)).toBeCloseTo(8.45, 2)
   })
   test('with one topping', () => {
-    expect(calculateTotal(6.45, 1.00, 0.50, true)).toBeCloseTo(8.75, 2)
+    expect(calculatePizzaTotal(6.45, 1.00, 0.50, true)).toBeCloseTo(8.75, 2)
   })
   test('with two toppings', () => {
-    expect(calculateTotal(6.45, 1.00, 1.00, true)).toBeCloseTo(9.30, 2)
+    expect(calculatePizzaTotal(6.45, 1.00, 1.00, true)).toBeCloseTo(9.30, 2)
   })
   test('with three toppings', () => {
-    expect(calculateTotal(6.45, 1.00, 1.50, true)).toBeCloseTo(9.84, 2)
+    expect(calculatePizzaTotal(6.45, 1.00, 1.50, true)).toBeCloseTo(9.84, 2)
   })
 })
