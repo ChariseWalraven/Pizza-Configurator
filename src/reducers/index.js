@@ -1,13 +1,13 @@
 import reference from "./reference";
 import totalPrice from "./totalPrice";
-import sauce from './sauce'
-import base from './base'
+import baseAndSauce from './base'
 import toppings from './toppings'
+import checkboxes from './checkboxes'
 
 export default {
+  baseAndSauce,
+  checkboxes,
   reference,
-  totalPrice,
-  sauce,
   toppings,
-  base
+  totalPrice,
 }

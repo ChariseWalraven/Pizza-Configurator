@@ -1,4 +1,4 @@
-const { calculateBaseOrSauce, calculateToppings} = require('./logic')
+const { calculateBaseOrSauce, calculateToppings, calculateTurboDrone, calculatePizzaTotal} = require('./logic')
 import {bases, sauces} from '../constants'
 
 describe('calculateBaseOrSauce', () => {
@@ -53,24 +53,78 @@ describe('calculateToppings', () => {
   test('exists', () => {
     expect(calculateToppings()).toBeDefined()
   })
-  test('returns something', () => {
-    expect(calculateToppings()).toBeTruthy()
+  test('returns 0 if no toppings are selected', () => {
+    expect(calculateToppings()).toBe(0)
   })
   test('returns a number', () => {
     expect(typeof calculateToppings()).toBe('number')
   })
-  test('returns the correct number when one, two, and three strings are entered', () => {
-    expect(calculateToppings('Pineapple')).toBe(0.50)
-    expect(calculateToppings('Pineapple', 'Corn')).toBe(1.00)
-    expect(calculateToppings('Pineapple', 'Corn', 'Olives(green)')).toBe(1.50)
+  test('returns the correct number when the number of toppings is entered', () => {
+    expect(calculateToppings(1)).toBe(0.50)
+    expect(calculateToppings(2)).toBe(1.00)
+    expect(calculateToppings(3)).toBe(1.50)
   })
-  test('returns the correct number when one, two, and three indexes are entered', () => {
-    expect(calculateToppings(0)).toBe(0.50)
-    expect(calculateToppings(0,1)).toBe(1.00)
-    expect(calculateToppings(0,1,2)).toBe(1.50)
+  test('returns false if the number of toppings has been exceeded', () => {
+    expect(calculateToppings(4)).toBe(false)
   })
-  test('has up to 3 arguments', () => {
-    expect(calculateToppings()).toBeCalledWith(string, string, string)
-    expect(calculateToppings()).toBeCalledWith(number, number, number)
+})
+
+describe('calculateTurboDrone', () => {
+  test('exists', () => {
+    expect(calculateTurboDrone()).toBeDefined()
+  })
+  test('returns something', () => {
+    expect(calculateTurboDrone(0,0)).toBe(0)
+  })
+  test('returns a number', () => {
+    expect(typeof calculateTurboDrone()).toBe('number')
+  })
+  test('returns the correct number with no toppings', () => {
+    expect(calculateTurboDrone(6.45, 1.00)).toBeCloseTo(0.75, 2)
+  })
+  test('with one topping', () => {
+    expect(calculateTurboDrone(6.45, 1.00, 0.50)).toBeCloseTo(0.80, 2)
+  })
+  test('with two toppings', () => {
+    expect(calculateTurboDrone(6.45, 1.00, 1.00)).toBeCloseTo(0.85, 2)
+  })
+  test('with three toppings', () => {
+    expect(calculateTurboDrone(6.45, 1.00, 1.50)).toBeCloseTo(0.89, 2)
+  })
+})
+
+describe('calculatePizzaTotal', () => {
+  test('exists', () => {
+    expect(calculatePizzaTotal()).toBeDefined()
+  })
+  test('returns something', () => {
+    expect(calculatePizzaTotal()).toBe(6.95)
+  })
+  test('returns a number', () => {
+    expect(typeof calculatePizzaTotal()).toBe('number')
+  })
+  test('returns the correct number with no toppings and no turbo drone', () => {
+    expect(calculatePizzaTotal(6.45, 1.00)).toBeCloseTo(7.45, 2)
+  })
+  test('with one topping', () => {
+    expect(calculatePizzaTotal(6.45, 1.00, 0.50)).toBeCloseTo(7.95, 2)
+  })
+  test('with two toppings', () => {
+    expect(calculatePizzaTotal(6.45, 1.00, 1.00)).toBeCloseTo(8.45, 2)
+  })
+  test('with three toppings', () => {
+    expect(calculatePizzaTotal(6.45, 1.00, 1.50)).toBeCloseTo(8.95, 2)
+  })
+  test('returns the correct number with no toppings and turbo drone selected', () => {
+    expect(calculatePizzaTotal(6.45, 1.00, true)).toBeCloseTo(8.45, 2)
+  })
+  test('with one topping', () => {
+    expect(calculatePizzaTotal(6.45, 1.00, 0.50, true)).toBeCloseTo(8.75, 2)
+  })
+  test('with two toppings', () => {
+    expect(calculatePizzaTotal(6.45, 1.00, 1.00, true)).toBeCloseTo(9.30, 2)
+  })
+  test('with three toppings', () => {
+    expect(calculatePizzaTotal(6.45, 1.00, 1.50, true)).toBeCloseTo(9.84, 2)
   })
 })

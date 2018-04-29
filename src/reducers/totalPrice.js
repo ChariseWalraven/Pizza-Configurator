@@ -1,3 +1,11 @@
-export default function(state = 6.95, action = {}){
-  return state
+import { CALCULATE_TOTAL } from '../actions/types'
+
+export default function(state = 0, { type, payload }){
+  switch(type){
+    case CALCULATE_TOTAL:
+    return payload
+
+    default:
+    return state
+  }
 } 

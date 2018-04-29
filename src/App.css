@@ -5,20 +5,8 @@
   color: white;
 }
 
-.left-section {
-  width: 60%;
-  position: relative;
-  min-height: 1px;
-  padding: 0 15px;
-}
-
-.left-section h1 {
-  display: inline;
-  z-index: 1;
-}
-
 .App-logo {
-  height: 120px;
+  height: 350px;
 }
 
 .App-title {
@@ -36,11 +24,6 @@
   margin: 0 auto;
 }
 
-.total img, .total button{
-  /* display: block; */
-  max-height: 30%;
-}
-
 #order-button {
   margin: 20px;
   background-color: lightgreen;
@@ -49,21 +32,28 @@
   z-index: -1;
 }
 
+#order-button:focus {
+  outline: none
+}
+
 .total-price {
-  width: 40px;
-  height: 40px;
-  background-color: yellow;
-  line-height: 300%;
+  width: 60px;
+  height: 60px;
+  background-color: #4d4d;
   margin: 0 auto;
   border-radius: 50px;
-  text-align: center;
-  display: inline-flex;
+  display: block;
   box-shadow: 2px 4px 5px grey;
 }
 
-/* .total, .App, .left-section {
-  border: 1px solid grey;
-} */
+.total-price span {
+  line-height: 450%;
+  margin-left: 9px;
+}
+ 
+.toppings-main-label, .bases-main-label, .turbo-drone-main-label, .sauces-main-label {
+  font-weight: bold
+}
 
 button {
   border-radius: 0px;
@@ -71,6 +61,8 @@ button {
   cursor: pointer;
 }
 
-button:focus {
-  outline: none
+@media(max-width: 960px){
+  .max-3 {
+    margin: 0 0 0 60%;
+  }
 }
