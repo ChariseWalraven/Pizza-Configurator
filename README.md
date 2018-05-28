@@ -1,43 +1,54 @@
 # Pizza Configurator
 
-You're asked to create a pizza configurator for NewAgePizza.com, a new and hip venture to get your pizza. It should be a single page that contains all the following elements. 
+## :large_blue_diamond: In Progress!
 
-First you pick your base. You have four options:
+## Quickstart :rocket:
 
-1. 25cm NY Style € 8,99
-2. 30cm NY Style € 11,49
-3. 35cm NY Style € 13,49
-4. 20cm NY Style € 6,45
+ 1. clone this repo
+ 2. `cd` into `/server`
+ 3. run `tsc`
+ 4. `cd` into `./`
+ 5. run `postintall`
+ 6. happy hacking! :ok_hand:
 
-After that you pick your sauce options:
+> You're asked to create a pizza configurator for NewAgePizza.com, a new and hip venture to get your pizza. It should be a single page that contains all the following elements. 
 
-1. White sauce
-2. Red sauce
-3. Double red sauce € 1,00
-4. Mix it up € 1,50 
+> First you pick your base. You have four options:
 
-After that you pick one or more toppings:
+> 1. 25cm NY Style € 8,99
+> 2. 30cm NY Style € 11,49
+> 3. 35cm NY Style € 13,49
+> 4. 20cm NY Style € 6,45
 
-1. Pineapple
-2. Corn
-3. Olives (green)
-4. Red unioun
-5. Spinach
-6. Cherry tomatoes
-7. Chicken
+> After that you pick your sauce options:
 
-_Rules: max. 3 toppings, toppings cost € 0,50 apiece_
+> 1. White sauce
+> 2. Red sauce
+> 3. Double red sauce € 1,00
+> 4. Mix it up € 1,50 
 
-Last but not least, you can choose turbo-drone-delivery which is an additional 10% on top of the total pizza price. 
+> After that you pick one or more toppings:
 
-Make sure you can change previous steps even if you already changed stuff before. So I could pick a base, a sauce and a topping and switch the base after that. 
+> 1. Pineapple
+> 2. Corn
+> 3. Olives (green)
+> 4. Red unioun
+> 5. Spinach
+> 6. Cherry tomatoes
+> 7. Chicken
 
-Additional instructions:
+> _Rules: max. 3 toppings, toppings cost € 0,50 apiece_
 
-1. If any base is picked there should always be a price shown for the total pizza. 
-2. The redux store should contain the state of the pizza
-3. You don't need any backend connection
-4. Make sure you split your app into separate components
-5. We expect you to use [controlled form components](https://reactjs.org/docs/forms.html#controlled-components) as they are the best practise
+> Last but not least, you can choose turbo-drone-delivery which is an additional 10% on top of the total pizza price. 
 
-Bonus points if you use [Material-UI](https://material-ui-next.com) (v1)
+> Make sure you can change previous steps even if you already changed stuff before. So I could pick a base, a sauce and a topping and switch the base after that. 
+
+> Additional instructions:
+
+> 1. If any base is picked there should always be a price shown for the total pizza. 
+> 2. The redux store should contain the state of the pizza
+> 3. You don't need any backend connection
+> 4. Make sure you split your app into separate components
+> 5. We expect you to use [controlled form components](https://reactjs.org/docs/forms.html#controlled-components) as they are the best practise
+
+> Bonus points if you use [Material-UI](https://material-ui-next.com) (v1) 
