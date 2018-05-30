@@ -5,7 +5,7 @@
 ## Quickstart :rocket:
 
  1. clone this repo
- 2. run `postintall`
+ 2. run `start`
  3. happy hacking! :ok_hand:
 
 > You're asked to create a pizza configurator for NewAgePizza.com, a new and hip venture to get your pizza. It should be a single page that contains all the following elements. 
