@@ -5,11 +5,8 @@
 ## Quickstart :rocket:
 
  1. clone this repo
- 2. `cd` into `/server`
- 3. run `tsc`
- 4. `cd` into `./`
- 5. run `postintall`
- 6. happy hacking! :ok_hand:
+ 2. run `postintall`
+ 3. happy hacking! :ok_hand:
 
 > You're asked to create a pizza configurator for NewAgePizza.com, a new and hip venture to get your pizza. It should be a single page that contains all the following elements. 
 
